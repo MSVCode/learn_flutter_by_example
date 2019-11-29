@@ -36,21 +36,12 @@ class LoadingDialogState extends State<LoadingDialog> {
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
-              SizedBox(
-                height: 30,
-              ),
               widget.progressBar == true
                   ? LinearProgressIndicator(
                       value: progress,
                     )
                   : CircularProgressIndicator(),
-              SizedBox(
-                height: 20,
-              ),
               Text("Loading"),
-              SizedBox(
-                height: 30,
-              ),
             ],
           ),
         ),
