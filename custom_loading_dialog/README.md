@@ -2,6 +2,8 @@
 
 How to create your own loading dialog.
 
+![LoadingDialog](./img/LoadingDialog.gif)
+
 ## Getting Started
 
 1. Copy this project to your workspace
