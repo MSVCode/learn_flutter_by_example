@@ -6,23 +6,17 @@ import 'package:flutter/material.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      title: 'Loading Dialog',
+      home: MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  final String title;
+  MyHomePage({Key key}) : super(key: key);
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -60,34 +54,35 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text(widget.title),
+      appBar: AppBar(
+        title: Text("Loading Dialog"),
+      ),
+      body: Center(
+        child: Column(
+          children: <Widget>[
+            RaisedButton(
+              child: Text("Simple Loading"),
+              onPressed: showLoading,
+            ),
+            RaisedButton(
+              child: Text("Loading with Progress"),
+              onPressed: showLoadingWithProgress,
+            ),
+            // RaisedButton(
+            //   child: Text("Simple Dialog"),
+            //   onPressed: () => showDialog(
+            //     context: context,
+            //     builder: (_) => Dialog(
+            //       child: SizedBox(
+            //         height: 150,
+            //         child: Center(child: Text("I'm a Dialog")),
+            //       ),
+            //     ),
+            //   ),
+            // ),
+          ],
         ),
-        body: Center(
-          child: Column(
-            children: <Widget>[
-              RaisedButton(
-                child: Text("Simple Loading"),
-                onPressed: showLoading,
-              ),
-              RaisedButton(
-                child: Text("Loading with Progress"),
-                onPressed: showLoadingWithProgress,
-              ),
-              // RaisedButton(
-              //   child: Text("Simple Dialog"),
-              //   onPressed: () => showDialog(
-              //     context: context,
-              //     builder: (_) => Dialog(
-              //       child: SizedBox(
-              //         height: 150,
-              //         child: Center(child: Text("I'm a Dialog")),
-              //       ),
-              //     ),
-              //   ),
-              // ),
-            ],
-          ),
-        ));
+      ),
+    );
   }
 }
